@@ -1,0 +1,180 @@
+{
+  "document_id" : "D07",
+  "catalog_version" : "1.0",
+  "model" : "gemini/gemini-3.5-flash",
+  "flags" : [ "embedded_instructions" ],
+  "cases" : [ {
+    "case_index" : 0,
+    "label" : "Ms. J.M.H.",
+    "fields" : {
+      "patient_initials" : {
+        "status" : "extracted",
+        "value" : "JMH",
+        "confidence" : "medium",
+        "provenance" : [ {
+          "quote" : "jenna.m.hartley@example-mail.com",
+          "start" : 6,
+          "end" : 38
+        } ]
+      },
+      "patient_age_years" : {
+        "status" : "extracted",
+        "value" : 38,
+        "confidence" : "high",
+        "provenance" : [ {
+          "quote" : "38 year old",
+          "start" : 348,
+          "end" : 359
+        } ]
+      },
+      "patient_sex" : {
+        "status" : "extracted",
+        "value" : "female",
+        "confidence" : "high",
+        "provenance" : [ {
+          "quote" : "woman",
+          "start" : 360,
+          "end" : 365
+        } ]
+      },
+      "suspect_drug_name" : {
+        "status" : "extracted",
+        "value" : "paroxetine",
+        "confidence" : "high",
+        "provenance" : [ {
+          "quote" : "paroxetine",
+          "start" : 103,
+          "end" : 113
+        } ]
+      },
+      "suspect_drug_dose_value" : {
+        "status" : "extracted",
+        "value" : 20,
+        "confidence" : "high",
+        "provenance" : [ {
+          "quote" : "20 mg",
+          "start" : 418,
+          "end" : 423
+        } ]
+      },
+      "suspect_drug_dose_unit" : {
+        "status" : "extracted",
+        "value" : "mg",
+        "confidence" : "high",
+        "provenance" : [ {
+          "quote" : "20 mg",
+          "start" : 418,
+          "end" : 423
+        } ]
+      },
+      "suspect_drug_route" : {
+        "status" : "extracted",
+        "value" : "oral",
+        "confidence" : "high",
+        "provenance" : [ {
+          "quote" : "one tablet",
+          "start" : 425,
+          "end" : 435
+        } ]
+      },
+      "suspect_drug_start_date" : {
+        "status" : "extracted",
+        "value" : "2026-03-30",
+        "confidence" : "high",
+        "provenance" : [ {
+          "quote" : "started it on March 30th, 2026",
+          "start" : 497,
+          "end" : 527
+        } ]
+      },
+      "event_terms" : {
+        "status" : "extracted",
+        "value" : [ "insomnia", "suicidal ideation" ],
+        "confidence" : "high",
+        "provenance" : [ {
+          "quote" : "stopped sleeping",
+          "start" : 627,
+          "end" : 643
+        }, {
+          "quote" : "thoughts about not wanting to be alive",
+          "start" : 735,
+          "end" : 773
+        } ]
+      },
+      "event_onset_date" : {
+        "status" : "extracted",
+        "value" : "2026-04-09",
+        "confidence" : "medium",
+        "provenance" : [ {
+          "quote" : "started it on March 30th, 2026",
+          "start" : 497,
+          "end" : 527
+        }, {
+          "quote" : "About a week and a half in I basically stopped sleeping",
+          "start" : 588,
+          "end" : 643
+        } ]
+      },
+      "event_outcome" : {
+        "status" : "extracted",
+        "value" : "not_recovered",
+        "confidence" : "high",
+        "provenance" : [ {
+          "quote" : "The sleep is a little better but the dark thoughts are still there.",
+          "start" : 1146,
+          "end" : 1213
+        } ]
+      },
+      "seriousness_criteria" : {
+        "status" : "extracted",
+        "value" : [ "hospitalization" ],
+        "confidence" : "high",
+        "provenance" : [ {
+          "quote" : "admitted me to the hospital's psychiatric unit for two nights",
+          "start" : 903,
+          "end" : 964
+        } ]
+      },
+      "reporter_type" : {
+        "status" : "extracted",
+        "value" : "consumer",
+        "confidence" : "high",
+        "provenance" : [ {
+          "quote" : "I'm writing because I've been having really bad side effects",
+          "start" : 183,
+          "end" : 243
+        } ]
+      },
+      "report_date" : {
+        "status" : "extracted",
+        "value" : "2026-04-27",
+        "confidence" : "high",
+        "provenance" : [ {
+          "quote" : "27 April 2026",
+          "start" : 154,
+          "end" : 167
+        } ]
+      },
+      "country" : {
+        "status" : "extracted",
+        "value" : "US",
+        "confidence" : "high",
+        "provenance" : [ {
+          "quote" : "Columbus, Ohio",
+          "start" : 371,
+          "end" : 385
+        } ]
+      },
+      "concomitant_drugs" : {
+        "status" : "extracted",
+        "value" : [ "multivitamin" ],
+        "confidence" : "high",
+        "provenance" : [ {
+          "quote" : "I'm not taking anything else except a daily multivitamin.",
+          "start" : 529,
+          "end" : 586
+        } ]
+      }
+    }
+  } ]
+}
