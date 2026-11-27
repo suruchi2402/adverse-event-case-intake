@@ -1,0 +1,16 @@
+# Secrets: the API key lives only in your shell environment
+.env
+.env.*
+*.key
+
+# Build output
+backend/target/
+frontend/node_modules/
+frontend/dist/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+.DS_Store
+.claude/settings.local.json
