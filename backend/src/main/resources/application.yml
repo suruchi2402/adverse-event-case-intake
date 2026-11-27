@@ -1,0 +1,40 @@
+# Paths are relative to the working directory. Run the jar from the repository root (replay.sh and start.sh do).
+case-intake:
+  documents: ${CASE_INTAKE_DOCUMENTS:documents,documents/stretch}
+  catalog: ${CASE_INTAKE_CATALOG:catalog/field_catalog.json}
+  out: ${CASE_INTAKE_OUT:out}
+  fixtures: ${CASE_INTAKE_FIXTURES:fixtures}
+
+llm:
+  # gemini: call the model, record every exchange under fixtures/ (reusing recordings that match the document text)
+  # replay: answer from fixtures/ only; no key, no network
+  provider: ${LLM_PROVIDER:replay}
+  gemini:
+    base-url: https://generativelanguage.googleapis.com/v1beta
+    # Copy the exact model id from the model list in Google AI Studio, e.g. export GEMINI_MODEL=...
+    model: ${GEMINI_MODEL:}
+    # Name of the environment variable that holds the key. The key itself is never in a file.
+    api-key-env: GEMINI_API_KEY
+    temperature: 0
+    max-output-tokens: 16384
+    timeout: 180s
+  rate-limit:
+    # Stay under the free tier's per-minute limit; check your project's limits in AI Studio.
+    requests-per-minute: 5
+  retry:
+    max-attempts: 6
+    initial-backoff: 5s
+    max-backoff: 90s
+
+server:
+  port: ${PORT:8080}
+
+spring:
+  main:
+    banner-mode: off
+  jackson:
+    default-property-inclusion: non_null
+
+app:
+  cors:
+    allowed-origins: ${CORS_ORIGINS:http://localhost:5173}
